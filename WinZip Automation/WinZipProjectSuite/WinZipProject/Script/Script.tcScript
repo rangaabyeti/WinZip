@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="child list">
+			<Node name="applictioncommonfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="ApplictionCommonFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{33C5BDDD-5B2C-4321-B39E-EB57457C0FA5}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="excelfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="ExcelFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{810A507F-99F5-475E-ABF4-2BA0AA60B0D3}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="mytest">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="MyTest.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{652C28C4-3996-4400-8367-8B600FCB0B7A}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="unit1">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Unit1.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{22598C54-3E40-48BA-B9B1-1CAF8F4E9313}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+		</Node>
+		<Node name="folders">
+			<Node name="lib">
+				<Node name="folders"/>
+				<Node name="references">
+					<Prp name="{33c5bddd-5b2c-4321-b39e-eb57457c0fa5}" type="S" value=""/>
+					<Prp name="{810a507f-99f5-475e-abf4-2ba0aa60b0d3}" type="S" value=""/>
+				</Node>
+				<Prp name="caption" type="S" value="Lib"/>
+				<Prp name="description" type="S" value="A logical folder that is used to organize project items and elements."/>
+				<Prp name="moniker" type="S" value=""/>
+			</Node>
+		</Node>
+		<Node name="settings"/>
+		<Prp name="signature" type="S" value="{9252F941-DB23-4FCA-AA50-858B33BB4A19}"/>
+		<Prp name="version" type="S" value="11.0"/>
+	</Node>
+</Nodes>

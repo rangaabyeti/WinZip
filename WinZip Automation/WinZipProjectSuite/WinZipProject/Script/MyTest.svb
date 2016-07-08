@@ -1,0 +1,28 @@
+﻿'USEUNIT ApplictionCommonFunctions
+
+Sub WinZip_First
+    
+  'Lanunch VeriFire Application
+  Dim installerPath, testObj, itemPath
+  installerPath = "C:\Program Files (x86)\WinZip\WINZIP32.exe"
+  Set testObj = Aliases.WINZIP.wnd_WinZip
+  Call ApplictionCommonFunctions.LaunchApplication(installerPath, testObj)
+  
+  'Click on New button in toolbar window
+  Call Delay(2000, "application is loading")
+  testObj.tool_Window.toolbar_Window.button_New.ClickButton
+  
+  'Click on Cancel button in New Archive dialog window
+  Aliases.WINZIP.dialog_NewArchive.button_Cancel.ClickButton
+  
+  'Click on File -> New Archive in menuItem
+  Aliases.WINZIP.wnd_WinZip.menubar_Application.MenuItem("File").Click
+  Aliases.WINZIP.Popup("File").MenuItem("New Archive..."&Chr(9)&"Ctrl+N").click
+  
+  'Click on Cancel button in New Archive dialog window
+  Aliases.WINZIP.dialog_NewArchive.button_Cancel.ClickButton
+  
+  'Close Verifire application
+  Call ApplictionCommonFunctions.CLoseApplication(testObj)  
+  
+End Sub

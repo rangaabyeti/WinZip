@@ -1,0 +1,55 @@
+﻿'=====================================================
+'! Funcation to Launch and Maximize the WinZip application. 
+'! 
+'! @param installerPath path of application installer. 
+'! @param testObj application main from object. 
+'! 
+'! @author Ranga
+'! @since 17-06-2015
+Sub LaunchApplication(installerPath, testObj)
+  
+  'Adding the installer path to Tested Apps store and storing the id
+  appID = TestedApps.Add(installerPath)
+  
+  'Run the TestedApps
+  Call TestedApps.Items(appID).Run
+  Call Delay(2000, "application is loading")
+  
+  'Clean the TestedApps
+  TestedApps.Clear
+  
+  'Maximize Verifire Tools
+  Log.Message("Maximize WinZip Tools")
+  testObj.Maximize 
+  
+  'Verify VeriFire Tools application open
+  Log.Message("Verify the VeriFire Tools application open")
+  If aqObject.CheckProperty(testObj, "Enabled", cmpEqual, True) then
+    Log.Checkpoint("WinZip application opens successfully")    
+  Else
+    Log.Error("Failure to launch WinZip application")
+  End If  
+  
+End Sub
+
+'=====================================================
+'! Funcation to Close the VeriFire Tools application. 
+'! 
+'! @param testObj application main from object. 
+'! 
+'! @author Ranga
+'! @since 17-06-2015
+Sub CLoseApplication(testObj)
+
+  Log.Message("Close the Application")
+  testObj.Close
+  
+  'Verify VeriFire Tools application closed
+  Log.Message("Verify the VeriFire Tools application closed")
+  If aqObject.CheckProperty(testObj, "Exists", cmpEqual, False) then
+    Log.Checkpoint("VeriFire Tools application closed successfully")    
+  Else
+    Log.Error("Failure to close VeriFire Tools application")
+  End If
+  
+End Sub
